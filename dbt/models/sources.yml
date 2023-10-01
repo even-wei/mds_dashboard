@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: json_source
+    tables:
+      - name: categories
+        description: "This table contains categories imported from a JSON file."
+        meta:
+          external_location: '../raw_data/categories.json'
+
+      - name: vendors
+        description: "This table contains vendor information imported from a JSON file."
+        meta:
+          external_location: '../raw_data/vendors.json'
+
+      - name: stacks
+        description: "This table contains data stacks information imported from a JSON file."
+        meta:
+          external_location: '../raw_data/stacks.json'

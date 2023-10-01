@@ -1,0 +1,7 @@
+mds_dashboard:
+
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: 'mds_dashboard.duckdb'
