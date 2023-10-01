@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: json_source
+  - name: json
     tables:
       - name: categories
         description: "This table contains categories imported from a JSON file."
