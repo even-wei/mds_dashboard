@@ -1,5 +1,5 @@
 select
-	id as vendor_id,
-	name as vendor_name,
-	category_id
+	slug as vendor_id,
+	companyName as vendor_name,
+	categorySlug as category_id
 from {{ source('json', 'vendors') }}
