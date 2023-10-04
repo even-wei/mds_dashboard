@@ -1,7 +1,7 @@
-select
-	slug as company_id,
-	companyName as company_name,
+SELECT
+	slug AS company_id,
+	companyName AS company_name,
 	description,
 	url,
 	verified
-from {{ source('json', 'stacks') }}
+FROM {{ source('json', 'stacks') }}

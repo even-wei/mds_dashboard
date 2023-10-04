@@ -1,4 +1,4 @@
-select
+SELECT
 	company_id,
 	company_name
-from {{ ref('stg_companies') }}
+FROM {{ ref('stg_companies') }}

@@ -1,4 +1,4 @@
-select
-	slug as category_id,
-	name as category_name
-from {{ source('json', 'categories') }}
+SELECT
+	slug AS category_id,
+	name AS category_name
+FROM {{ source('json', 'categories') }}
