@@ -14,9 +14,16 @@ companies_per_vendor AS (
 
 SELECT
 	cv.vendor_id,
+	v.category_id,
+	v.business_model,
+	v.count_likes,
 	cv.companies_per_vendor as num_compnay,
 	(CAST(cv.companies_per_vendor AS DECIMAL) / tc.total_companies) * 100 AS num_company_in_percentage
 FROM
 	companies_per_vendor cv,
 	total_companies tc
+JOIN
+	{{ ref('fact_vendors') }} v
+ON
+	cv.vendor_id = v.vendor_id
 ORDER BY num_compnay DESC
