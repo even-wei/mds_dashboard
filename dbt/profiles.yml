@@ -5,3 +5,8 @@ mds_dashboard:
     dev:
       type: duckdb
       path: 'mds_dashboard.duckdb'
+      schema: dev
+    prod:
+      type: duckdb
+      path: 'mds_dashboard.duckdb'
+      schema: prod
