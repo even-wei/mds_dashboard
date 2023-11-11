@@ -3,5 +3,10 @@ SELECT
 	vendor_name,
 	category_id,
 	business_model,
-	count_likes
+	location,
+	current_stage,
+	rating,
+	count_likes,
+	created_at,
+	updated_at
 FROM {{ ref('stg_vendors') }}

@@ -1,8 +1,8 @@
 WITH unnest_vendors AS (
 	SELECT
-		slug AS company_id,
+		company_id,
 		UNNEST(vendors, recursive := true)
-	FROM {{ source('json', 'stacks') }}
+	FROM {{ ref('stg_companies') }}
 )
 
 SELECT

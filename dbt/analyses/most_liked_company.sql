@@ -1,4 +1,4 @@
 SELECT
 	*
-FROM {{ ref('fact_vendors') }}
+FROM {{ ref('dim_vendors') }}
 ORDER BY count_likes DESC

@@ -3,5 +3,20 @@ SELECT
 	companyName AS vendor_name,
 	categorySlug AS category_id,
 	businessModel AS business_model,
-	countLikes AS count_likes
+	shortDescription AS short_descripiton,
+	longDescription AS long_descripiton,
+	location,
+	targetSegment AS target_segment,
+	pricing,
+	domain,
+	deployment,
+	linkedinProfile AS linkedin_profile,
+	twitterProfile AS twitter_profile,
+	githubProfile AS github_profile,
+	currentStage AS current_stage,
+	companyLogo AS logo_url,
+	rating,
+	countLikes AS count_likes,
+	createdAt AS created_at,
+	updatedAt AS updated_at
 FROM {{ source('json', 'vendors') }}

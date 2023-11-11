@@ -2,13 +2,13 @@ WITH
 total_companies AS (
 	SELECT
 		COUNT(DISTINCT company_id) AS total_companies
-	FROM {{ ref('fact_company_vendor') }}
+	FROM {{ ref('fct_vendor_usage') }}
 ),
 companies_per_vendor AS (
 	SELECT
 		vendor_id,
 		COUNT(DISTINCT company_id) AS companies_per_vendor
-	FROM {{ ref('fact_company_vendor') }}
+	FROM {{ ref('fct_vendor_usage') }}
 	GROUP BY vendor_id
 )
 
@@ -23,7 +23,7 @@ FROM
 	companies_per_vendor cv,
 	total_companies tc
 JOIN
-	{{ ref('fact_vendors') }} v
+	{{ ref('dim_vendors') }} v
 ON
 	cv.vendor_id = v.vendor_id
 WHERE v.category_id = 'data-quality-monitoring'
