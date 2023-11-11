@@ -32,10 +32,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   mds_dashboard:
-    # Config indicated by + and applies to all files under models/example/
     staging:
       +materialized: view
-    star:
-      +materialized: view
-    mart:
+    marts:
       +materialized: table
